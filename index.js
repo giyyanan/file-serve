@@ -61,7 +61,7 @@ app.get('/display', (req, res) => {
             try {
                 res.sendFile(path.join(__dirname, '/uploads/' + req.query.name));
             } catch (error) {
-                res.write("error occured while fetching file")
+                res.write("Error occured while fetching file from server")
             }
         } else {
             res.status(400).send('File type extension not supported. File type should be either jpg or png or pdf')
