@@ -15,7 +15,7 @@
     "node-monitor": "^0.3.11",
     "path": "^0.12.7",
     "react": "^17.0.2",
-    "sequelize": "^7.0.0-alpha.3",
+    "sequelize": "^6.12.4",
     "typescript": "^4.5.4"
   }
 }

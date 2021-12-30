@@ -56,20 +56,20 @@ app.post('/uploadMany', upload.array('files', 10), function (req, res, next) {
 
 app.get('/display', (req, res) => {
     const filetypes = /jpeg|jpg|png|pdf/;
-    if(req.query.name){
-        if(filetypes.test(req.query.name.split('.')[1])){
+    if (req.query.name) {
+        if (filetypes.test(req.query.name.split('.')[1])) {
             try {
-                res.sendFile(path.join(__dirname, '/uploads/'+req.query.name));
+                res.sendFile(path.join(__dirname, '/uploads/' + req.query.name));
             } catch (error) {
                 res.write("error occured while fetching file")
             }
-        } else{
+        } else {
             res.status(400).send('File type extension not supported. File type should be either jpg or png or pdf')
         }
-    }else{
+    } else {
         res.status(400).send('enter a file name in URL (/diplay?name={filename.extension}) to fetch from server')
     }
-    
+
 });
 
 
