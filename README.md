@@ -1,25 +1,15 @@
-File Serve
+# File Serve
 
-File serve is a simple API to upload files through a NodeJS server.
-Currently files of type PNG, JPG and PDF with size upto 10MB are supported
+Node/Express upload server for storing and displaying files.
+The project is a small API for uploading PNG, JPG, and PDF files, then fetching them back by name.
 
-Usage
-1. Checkout git repository and install node modules with yarn
-2. To run simply type 'node index.js'
+## What it was trying to do
+- Accept one file or up to ten files per request.
+- Save uploads on disk with the original filename.
+- Serve uploaded files back through a display endpoint.
+- Provide a tiny backend that can be tested manually with Postman.
 
-Upload of files and display can be tested through Postman.
-
-Support for file uploads through webpage will be added in future.
-
-Routes
-GET '/'
-landing page for the application
-
-POST '/upload'
-form-data [file] : choose the file to upload in postman
-
-POST '/uploadMany'
-form-data [files] : choose upto 10 files to upload
-
-GET '/display?name={filename.extension}'
-name : enter the file name in the server to be displayed
+## Main parts
+- index.js - Express server and routes
+- public/ - static frontend assets
+- Upload routes for single and multiple files
